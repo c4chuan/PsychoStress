@@ -1,0 +1,85 @@
+表格
+<template>
+  <el-table-v2
+    :columns="columns"
+    :data="data"
+    :width="700"
+    :height="400"
+    fixed
+  />
+</template>
+
+<script lang="tsx" setup>
+import { ref } from 'vue'
+import { ElButton, ElTag, ElTooltip } from 'element-plus'
+import type { Column } from 'element-plus'
+
+const data = ref([
+  { id: 1, class: '一年一班', studentId: '2022141050001', name: '李明', status: '正常' },
+  { id: 2, class: '一年一班', studentId: '2022141050002', name: '王刚', status: '正常' },
+  { id: 3, class: '一年一班', studentId: '2022141050003', name: '叶雅婷', status: '存在风险' },
+  { id: 4, class: '一年一班', studentId: '2022141050004', name: '王彤心', status: '存在风险' },
+  { id: 5, class: '一年一班', studentId: '2022141050005', name: '蒋健', status: '正常' },
+  { id: 6, class: '一年一班', studentId: '2022141050006', name: '李志毅', status: '存在风险' },
+  { id: 7, class: '一年一班', studentId: '2022141050007', name: '何梦舒', status: '正常' },
+  { id: 8, class: '一年一班', studentId: '2022141050008', name: '王帅', status: '存在风险' },
+  { id: 9, class: '一年一班', studentId: '2022141050009', name: '张子豪', status: '正常' },
+])
+
+const columns: Column<any>[] = [
+  {
+    key: 'id',
+    title: '序号',
+    dataKey: 'id',
+    width: 80,
+    align: 'center',
+  },
+  {
+    key: 'class',
+    title: '班级',
+    dataKey: 'class',
+    width: 150,
+    align: 'center',
+  },
+  {
+    key: 'studentId',
+    title: '学号',
+    dataKey: 'studentId',
+    width: 150,
+    align: 'center',
+  },
+  {
+    key: 'name',
+    title: '姓名',
+    dataKey: 'name',
+    width: 150,
+    align: 'center',
+  },
+  {
+    key: 'status',
+    title: '状态',
+    dataKey: 'status',
+    width: 150,
+    align: 'center',
+    cellRenderer: ({ cellData: status }) => (
+      <ElTag type={status === '正常' ? 'success' : 'danger'}>
+        {status}
+      </ElTag>
+    ),
+  },
+  {
+    key: 'operations',
+    title: '操作',
+    cellRenderer: () => (
+      <>
+        <ElButton size="small">Edit</ElButton>
+        <ElButton size="small" type="danger">
+          Delete
+        </ElButton>
+      </>
+    ),
+    width: 150,
+    align: 'center',
+  },
+]
+</script>

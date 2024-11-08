@@ -1,0 +1,76 @@
+查询
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生查询系统</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .search-input {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #458cd3; 
+            color: white; 
+            margin-right: 10px;
+            border-radius: 4px;
+            border: none;
+            text-align: center;
+        }
+        .tab:hover {
+            background-color: #4f7fae; 
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="search-container">
+            <input type="text" v-model="searchQuery" class="search-input" placeholder="请输入学生姓名">
+            <button class="tab" @click="search">查询</button>
+            <button class="tab" @click="reset">重置</button>
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        const app = createApp({
+            data() {
+                return {
+                    searchQuery: '',
+                };
+            },
+            methods: {
+                search() {
+             
+                    console.log('查询:', this.searchQuery);
+            
+                },
+                reset() {
+                    this.searchQuery = '';
+                    console.log('重置查询');
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>

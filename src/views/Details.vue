@@ -19,9 +19,10 @@ const tableData = [
     <div class="table-container">
         <div class="search-box">
             <el-input v-model="input" style="width: 240px" placeholder="请输入" />
-            <el-button type="primary" icon="el-icon-search">搜索</el-button>
+            <el-button type="primary" style="margin-left: 30px;">搜索</el-button>
         </div>
-        <el-table :data="tableData" align="center" header-align="center" :header-cell-style="{ 'text-align': 'center' }">
+        <el-table :data="tableData" align="center" header-align="center"
+            :header-cell-style="{ 'text-align': 'center' }">
             <el-table-column prop="name" label="序号" width="120" align="center"></el-table-column>
             <el-table-column prop="province" label="班级" width="120" align="center"></el-table-column>
             <el-table-column prop="city" label="学号" width="200" align="center"></el-table-column>
@@ -34,6 +35,9 @@ const tableData = [
                 </div>
             </el-table-column>
         </el-table>
+        <div class="pagination-box">
+            <el-pagination layout="prev, pager, next" :total="50"/>
+        </div>
     </div>
 </template>
 
@@ -42,6 +46,10 @@ const tableData = [
     width: 50px;
     height: 50px;
     margin-right: 10px;
+}
+
+.search-box {
+    width: 990px;
 }
 
 .title {
@@ -63,7 +71,11 @@ const tableData = [
     font-size: 20px;
     padding: 5px 10px;
 }
-
+.pagination-box{
+    width: 990px;
+    display: flex;
+    justify-content: flex-end;
+}
 .nav a:hover {
     background-color: #b3e0ff;
     border-radius: 5px;
@@ -104,6 +116,9 @@ const tableData = [
 .table-container {
     width: 80%;
     margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .button-group {

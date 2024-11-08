@@ -11,8 +11,32 @@ const router = createRouter({
         },
         {
             path: '/',
+            redirect: '/login',
+            component: () => import('@/views/Login.vue')
+        },
+        {
+            path: '/phoneforget',
+            name: 'phoneforget',
+            component: () => import('@/views/PhoneForget.vue')
+        },
+        {
+            path: '/phonefind',
+            name: 'phonefind',
+            component: () => import('@/views/PhoneFind.vue')
+        },
+        {
+            path: '/mailforget',
+            name: 'mailforget',
+            component: () => import('@/views/MailForget.vue')
+        },
+        {
+            path: '/mailfind',
+            name: 'mailfind',
+            component: () => import('@/views/MailFind.vue')
+        },
+        {
+            path: '/home',
             component: () => import('@/components/Header.vue'),
-            redirect: '/home',
             children: [
                 {
                     path: '/home',

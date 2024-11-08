@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四川大学青少年灾后心理创伤危机管理系统</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>  <!-- Include ECharts -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #F5F5F5;
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            border-bottom: 1px solid #ddd;
+            justify-content: center;
+            color: black;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .title {
+            font-size: 15px; 
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            margin: 0; 
+            margin-left: 210px; 
+        }
+        .nav a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+        .nav a:hover {
+            background-color: #b3e0ff;
+            border-radius: 5px;
+        }
+        .nav .selected {
+            background-color: #add8e6;
+            border-radius: 5px;
+        }
+        .user-icon {
+            position: absolute;
+            right: 18px;
+            top: 0px;
+        }
+        .user-icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .flex-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .chart-container {
+            width: 1000px; 
+            height: 1000px;
+            margin-left: 20px; 
+        }
+        .table-container{
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="flex-container">
+            <img src="logo.png" alt="logo" class="logo">
+            <div class="left">
+                <span class="title">四川大学青少年灾后心理创伤危机管理系统</span>
+            </div>
+            <div class="nav">
+                <a href="#" >首页</a>
+                <a href="#">心理状态</a>
+                <a href="#" class="selected">学生详情</a>
+                <a href="#">干预建议</a>
+            </div>
+            <div class="user-icon">
+                <img src="user icon.png" alt="User Icon">                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
