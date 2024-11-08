@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  background-color: #fff;
+}
+.el-menu--horizontal .el-menu-item {
+  border-bottom: none;
+}
+ 
+.el-menu--vertical .el-menu-item {
+  border-bottom: none;
+}
+ 
+.el-menu .el-menu-item.is-active {
+  border-bottom: none;
+}
+/* fade-slide */
+.fade-slide-leave-active,
+.fade-slide-enter-active {
+  transition: all 0.3s;
+}
+
+.fade-slide-enter-from {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.fade-slide-leave-to {
+  transform: translateX(30px);
+  opacity: 0;
+}

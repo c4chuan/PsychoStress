@@ -1,0 +1,305 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "name": "社会压力",
+      "symbolSize": 50,
+      "x": 0,
+      "y": 400,
+      "value": 28.685715,
+      "category": "社会原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#5470C6"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+     {
+      "id": "00",
+      "name": "社会支持",
+      "symbolSize": 15,
+      "x": 0,
+      "y": 299.6904,
+      "value": 28.685715,
+      "category": "社会原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#5470C6"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+     {
+      "id": "000",
+      "name": "社交媒体使用",
+      "symbolSize": 15,
+      "x": -50,
+      "y": 350.06424,
+      "value": 4,
+      "category": "社会原因",
+      "subCategory": "社会支持",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#5470C6"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+    {
+      "id": "1",
+      "name": "学校环境",
+      "symbolSize": 15,
+      "x": -100.08344,
+      "y": 446.8853,
+      "value": 4,
+      "category": "环境原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#91CC75"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+     {
+      "id": "11",
+      "name": "家庭环境",
+      "symbolSize": 45,
+      "x": -150.08344,
+      "y": 360.8853,
+      "value": 4,
+      "category": "环境原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#91CC75"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    }, 
+    {
+      "id": "111",
+      "name": "医疗资源环境",
+      "symbolSize": 30,
+      "x": -170.08344,
+      "y": 390.8853,
+      "value": 4,
+      "category": "环境原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#91CC75"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+    {
+      "id": "1111",
+      "name": "灾后重建情况",
+      "symbolSize": 15,
+      "x": -200.26337,
+      "y": 460.03506,
+      "value": 4,
+      "category": "环境原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#91CC75"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+    {
+      "id": "2",
+      "name": "睡眠障碍",
+      "symbolSize": 20,
+      "x": -100.76357,
+      "y": 245.29176,
+      "value": 9.485714,
+      "category": "生理原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#FAC858"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+        {
+      "id": "22",
+      "name": "创伤暴露情况",
+      "symbolSize": 40,
+      "x": -150.76357,
+      "y": 298.29176,
+      "value": 9.485714,
+      "category": "生理原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#FAC858"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+     {
+      "id": "222",
+      "name": "个人生理情况",
+      "symbolSize": 10,
+      "x": -195.6012,
+      "y": 267.16974,
+      "value": 4,
+      "category": "生理原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#FAC858"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+    {
+      "id": "3",
+      "name": "心理症状",
+      "symbolSize": 10,
+      "x": -242.82404,
+      "y": 325.26283,
+      "value": 9.485714,
+      "category": "心理原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#EE6666"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+    {
+      "id": "33",
+      "name": "个人经历",
+      "symbolSize": 10,
+      "x": -275.82404,
+      "y": 400.26283,
+      "value": 9.485714,
+      "category": "心理原因",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#EE6666"
+      },
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    },
+  
+    {
+      "id": "333",
+      "name": "心理认知",
+      "symbolSize": 50,
+      "x": -300.69568,
+      "y": 375.09113,
+      "value": 4,
+      "category": "心理原因",
+      "subCategory": "个人经历",
+      "symbol": "circle",
+      "itemStyle": {
+        "color": "#EE6666"
+      },
+      
+      "label": {
+        "show": false,
+        "fontSize": 25
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "0",
+      "target": "00"
+    },
+    {
+      "source": "0",
+      "target": "000"
+    },
+     {
+      "source": "00",
+      "target": "000"
+    },
+    {
+      "source": "1",
+      "target": "11"
+    },
+     {
+      "source": "1",
+      "target": "111"
+    },
+     {
+      "source": "1",
+      "target": "1111"
+    },
+     {
+      "source": "11",
+      "target": "111"
+    },
+     {
+      "source": "11",
+      "target": "1111"
+    },
+     {
+      "source": "111",
+      "target": "1111"
+    },
+      {
+      "source": "2",
+      "target": "22"
+    },
+     {
+      "source": "2",
+      "target": "222"
+    },
+     {
+      "source": "22",
+      "target": "222"
+    },
+    {
+      "source": "3",
+      "target": "33"
+    },
+     {
+      "source": "3",
+      "target": "333"
+    },
+     {
+      "source": "33",
+      "target": "333"
+    }
+  ],
+  "categories": [
+     {
+      "name": "社会原因",
+    },
+    {
+      "name": "环境原因"
+    },
+    {
+      "name": "生理原因"
+    },
+    {
+      "name": "心理原因"
+    }
+  ]
+}

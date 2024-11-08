@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四川大学青少年灾后心理创伤危机管理系统</title>
+  <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .header {
+      background-color: #F5F5F5;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      margin-left: 120px;
+    }
+
+    .nav a {
+      margin: 0 5px;
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      padding: 5px 10px;
+    }
+
+    .nav a:hover {
+      background-color: #b3e0ff;
+      border-radius: 5px;
+    }
+
+    .nav .selected {
+      background-color: #add8e6;
+      border-radius: 5px;
+    }
+
+    .user-icon {
+      position: absolute;
+      right: 18px;
+      top: 8px;
+    }
+
+    .user-icon img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .flex-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .table-container {
+      width: 80%;
+      margin: 20px auto;
+    }
+    .block {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: white;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="flex-container">
+      <img src="image(1).png" alt="logo" class="logo">
+      <div class="left">
+        <span class="title">四川大学青少年灾后心理创伤危机管理系统</span>
+      </div>
+      <div class="nav">
+        <a href="#" class="selected">首页</a>
+        <a href="#">心理状态</a>
+        <a href="#">学生详情</a>
+        <a href="#">干预建议</a>
+      </div>
+      <div class="user-icon">
+        <img src="image2.png" alt="User Icon">
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="demonstration">页数较少时的效果</span>
+    <el-pagination
+      layout="prev, pager, next"
+      :total="50">
+    </el-pagination>
+  </div>
+
+  
+
+  <div id="app" class="table-container">
+    <el-table :data="tableData" style="width: 100%  " >
+      <el-table-column prop="name" label="序号" width="120"></el-table-column>
+      <el-table-column prop="province" label="班级" width="120"></el-table-column>
+      <el-table-column prop="city" label="学号" width="200"></el-table-column>
+      <el-table-column prop="address" label="姓名" width="200"></el-table-column>
+      <el-table-column prop="zip" label="心理转介建议" width="200"></el-table-column>
+      <el-table-column fixed="right" label="心理档案" width="100">
+        <template slot-scope="scope">
+          <el-button @click="handleClick(scope.row)" type="text" size="small">存档</el-button>
+          <el-button type="text" size="small">发送</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          tableData: [
+            {  name: '1', province: '一年一班', city: '2022090265', address: '黄棕见', zip: '正念放松训练' },
+            { name: '2', province: '一年一班', city: '20229952323', address: '李想', zip: '转介心理老师' },
+            { name: '3', province: '一年一班', city: '20165549231', address: '杜伊星', zip: '转介专业医院' },
+            { name: '4', province: '一年一班', city: '20165549156', address: '王子豪', zip: '参加志愿活动' },
+            { name: '5', province: '一年一班', city: '20165541532', address: '合资恒', zip: '减少媒体使用' },
+            { name: '6', province: '一年一班', city: '20165549284', address: '反义徐', zip: '寻求社会支持' },
+            { name: '7', province: '一年一班', city: '20165491562', address: '十天刚', zip: '建立规律作息' },
+            { name: '8', province: '一年一班', city: '20165915462', address: '王晓胃', zip: '加强身体锻炼' },
+            { name: '9', province: '一年一班', city: '20147491562', address: '工序家', zip: '排解负向情感' },
+            { name: '10', province: '一年一班', city:'20147491562', address: '合苟鑫', zip: '增强心理韧性' },
+            // Add more data as needed
+          ]
+        };
+      },
+      methods: {
+        handleClick(row) {
+          console.log('查看', row);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

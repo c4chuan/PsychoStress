@@ -1,0 +1,469 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import * as echarts from 'echarts';
+const chart1 = ref(null);
+const chart2 = ref(null);
+const chart3 = ref(null);
+const chart4 = ref(null);
+const chart5 = ref(null);
+const chart6 = ref(null);
+const option1 = {
+
+title: {
+  text: '社会原因分布',
+  left: 'center',
+  textStyle: {
+    rich: {
+      big: {
+        fontSize: 20,  // Increase font size for the title
+        fontWeight: 'bold' // Make title bold
+      }
+    }
+  },
+  text: '{big|社会原因分布}' // Apply the 'big' style to the title text
+},
+legend: {
+  data: ['Allocated Budget', 'Actual Spending']
+},
+radar: {
+  indicator: [
+    { name: '社会压力', max: 6500 },
+    { name: '社会支持', max: 16000 ,
+          nameTextStyle: {  // Adjust font size for "社会支持"
+              fontSize: 20,  // Increase font size for "社会支持"
+              fontWeight: 'bold'} },
+    { name: '社交媒体使用', max: 30000 },
+  ],
+  name: {
+    formatter: function (name) {
+      // Style each label individually using rich formatting
+      return '{bold|' + name + '}';
+    },
+    rich: {
+      bold: {
+        fontSize: 12, // Larger font size for radar labels
+        fontWeight: 'bold' // Bold for radar labels
+      }
+    }
+  }
+},
+series: [
+  {
+    name: 'Budget vs spending',
+    type: 'radar',
+    data: [
+      {
+        value: [5000, 14000, 28000],
+      }
+    ]
+  }
+]
+
+};
+const option2 = {
+title: {
+  text: '环境原因分布',
+  left: 'center',
+  textStyle: {
+    rich: {
+      big: {
+        fontSize: 20,  // Increase font size for the title
+        fontWeight: 'bold' // Make title bold
+      }
+    }
+  },
+  text: '{big|环境原因分布}' // Apply the 'big' style to the title text
+},
+legend: {
+  data: ['Allocated Budget', 'Actual Spending']
+},
+radar: {
+  indicator: [
+    { name: '家庭环境', max: 6500 },
+    { name: '学校环境', max: 16000 },
+    { name: '医疗资源环境', max: 30000 },
+    { name: '灾后重建情况', max: 16000 }
+  ],
+  name: {
+    formatter: function (name) {
+      // Style each label individually using rich formatting
+      return '{bold|' + name + '}';
+    },
+    rich: {
+      bold: {
+        fontSize: 12, // Larger font size for radar labels
+        fontWeight: 'bold' // Bold for radar labels
+      }
+    }
+  }
+},
+series: [
+  {
+    name: 'Budget vs spending',
+    type: 'radar',
+    data: [
+      {
+        value: [5000, 14000, 28000],
+      }
+    ]
+  }
+]
+};
+const option3 = {
+title: {
+  text: '学生人格情况分布',
+  left: 'center',
+  textStyle: {
+    fontSize: 20 // 设置标题字体大小
+  }
+},
+tooltip: {
+  trigger: 'item',
+  textStyle: {
+    fontSize: 20 // 设置提示框字体大小
+  }
+},
+legend: {
+  orient: 'vertical',
+  left: 'left',
+  textStyle: {
+    fontSize: 15 // 设置图例字体大小
+  }
+},
+series: [
+  {
+    name: '生人格情况分布',
+    type: 'pie',
+    radius: '50%',
+    data: [
+      { value: 1048, name: '开放性' },
+      { value: 735, name: '责任心' },
+      { value: 580, name: '外向性' },
+      { value: 484, name: '宜人性' },
+      { value: 300, name: '神经质' }
+    ],
+    emphasis: {
+      itemStyle: {
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+      }
+    },
+    label: {
+      formatter: '{b}\n{d}%',
+      textStyle: {
+        fontSize: 13 // 设置饼图标签字体大小
+      }
+    }
+  }
+]
+};
+const option4 = {
+title: {
+  text: '环境原因分布',
+  left: 'center',
+  textStyle: {
+    rich: {
+      big: {
+        fontSize: 20,  // Increase font size for the title
+        fontWeight: 'bold' // Make title bold
+      }
+    }
+  },
+  text: '{big|生理原因分布}' // Apply the 'big' style to the title text
+},
+grid: {
+  left: '3%',
+  right: '30%',
+  bottom: '50%',
+  containLabel: true
+},
+legend: {
+  data: ['Allocated Budget', 'Actual Spending']
+},
+radar: {
+  indicator: [
+    { name: '个人生理情况', max: 6500 },
+    { name: '睡眠障碍', max: 16000 },
+    { name: '创伤暴露情况', max: 30000 },
+
+  ],
+  name: {
+    formatter: function (name) {
+      // Style each label individually using rich formatting
+      return '{bold|' + name + '}';
+    },
+    rich: {
+      bold: {
+        fontSize: 15, // Larger font size for radar labels
+        fontWeight: 'bold' // Bold for radar labels
+      }
+    }
+  }
+},
+series: [
+  {
+    name: 'Budget vs spending',
+    type: 'radar',
+    data: [
+      {
+        value: [5000, 14000, 28000],
+      }
+    ]
+  }
+]
+};
+const option5 = {
+title: {
+  text: '环境原因分布',
+  left: 'center',
+  textStyle: {
+    rich: {
+      big: {
+        fontSize: 20,  // Increase font size for the title
+        fontWeight: 'bold' // Make title bold
+      }
+    }
+  },
+  text: '{big|心理原因分布}' // Apply the 'big' style to the title text
+},
+grid: {
+  left: '3%',
+  right: '30%',
+  bottom: '50%',
+  containLabel: true
+},
+legend: {
+  data: ['Allocated Budget', 'Actual Spending']
+},
+radar: {
+  indicator: [
+    { name: '心理症状', max: 6500 },
+    { name: '个人经历', max: 16000 },
+    { name: '心理认知', max: 30000 },
+
+  ],
+  name: {
+    formatter: function (name) {
+      // Style each label individually using rich formatting
+      return '{bold|' + name + '}';
+    },
+    rich: {
+      bold: {
+        fontSize: 12, // Larger font size for radar labels
+        fontWeight: 'bold' // Bold for radar labels
+      }
+    }
+  }
+},
+series: [
+  {
+    name: 'Budget vs spending',
+    type: 'radar',
+    data: [
+      {
+        value: [5000, 14000, 28000],
+      }
+    ]
+  }
+]
+};
+const option6 = {
+title: {
+  text: '学生心理症状分布',
+  left: 'center',
+  textStyle: {
+    fontSize: 20 // 设置标题字体大小
+  }
+},
+tooltip: {
+  trigger: 'item',
+  textStyle: {
+    fontSize: 20 // 设置提示框字体大小
+  }
+},
+legend: {
+  orient: 'vertical',
+  left: 'left',
+  textStyle: {
+    fontSize: 15 // 设置图例字体大小
+  }
+},
+series: [
+  {
+    name: '生心理症状分布',
+    type: 'pie',
+    radius: '50%',
+    data: [
+      { value: 600, name: '抑郁' },
+      { value: 350, name: '焦虑' },
+      { value: 580, name: '孤独感' },
+      { value: 484, name: '自杀倾向' },
+      { value: 580, name: '应激反应' }
+    ],
+    emphasis: {
+      itemStyle: {
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+      }
+    },
+    label: {
+      formatter: '{b}\n{d}%', 
+      textStyle: {
+        fontSize: 13 // 设置饼图标签字体大小
+      }
+    }
+  }
+]
+};
+onMounted(() => {
+    const myChart1 = echarts.init(chart1.value);
+    const myChart2 = echarts.init(chart2.value);
+    const myChart3 = echarts.init(chart3.value);
+    const myChart4 = echarts.init(chart4.value);
+    const myChart5 = echarts.init(chart5.value);
+    const myChart6 = echarts.init(chart6.value);
+
+    myChart1.setOption(option1);
+    myChart2.setOption(option2);
+    myChart3.setOption(option3);
+    myChart4.setOption(option4);
+    myChart5.setOption(option5);
+    myChart6.setOption(option6);
+})
+
+</script>
+
+<template>
+    <div class="chart-container">
+        <div class="chart" ref="chart1"></div>
+        <div class="chart" ref="chart2"></div>
+        <div class="chart" ref="chart3"></div>
+        <div class="chart" ref="chart4"></div>
+        <div class="chart" ref="chart5"></div>
+        <div class="chart" ref="chart6"></div>
+    </div>
+</template>
+
+<style scoped>
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      margin-left: 120px;
+    }
+
+    .nav a {
+      margin: 0 5px;
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      padding: 5px 10px;
+    }
+
+    .nav a:hover {
+      background-color: #b3e0ff;
+      border-radius: 5px;
+    }
+
+    .nav .selected {
+      background-color: #add8e6;
+      border-radius: 5px;
+    }
+
+    .user-icon {
+      position: absolute;
+      right: 18px;
+      top: 8px;
+    }
+
+    .user-icon img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .flex-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .chart-container {
+      display: flex;
+      flex-wrap: wrap;
+      /* 允许换行 */
+      justify-content: space-around;
+      /* 水平分布 */
+      height: 100%;
+      width: 100%;
+      /* Set appropriate size for the chart container */
+      /* Add margin to place it left */
+    }
+
+    .chart {
+      width: 30%;
+      /* 每个图表占宽度的30% */
+      height: 50%;
+      /* 每行之间的间距 */
+    }
+
+
+    /* New CSS for the boxes */
+    .box-container {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px auto;
+      padding: 10px;
+      width: 75%;
+      /* Adjust this width if needed */
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid #ddd;
+      border-radius: 15px;
+      padding: 10px;
+      width: 250px;
+      height: 100px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      /* Ensure the background color is visible */
+    }
+
+    .box img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .box .text {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .box.green .text {
+      color: green;
+    }
+
+    .box.blue .text {
+      color: blue;
+    }
+
+    .box.red .text {
+      color: red;
+    }
+</style>
