@@ -9,7 +9,7 @@ onMounted(() => {
     const myChart = echarts.init(main.value);
     const option = {
         title: {
-            text: '存在心理创伤问题学生数量变化趋势',
+            text: '可能存在心理创伤问题学生数量变化趋势',
             textStyle: {
                 fontSize: 20,    // Increase font size of the title
                 fontWeight: 'bold' // Make the title bold if desired
@@ -35,7 +35,7 @@ onMounted(() => {
         },
         series: [
             {
-                name: '存在心理创伤的学生数量',
+                name: '可能存在心理创伤的学生数量',
                 type: 'line',
                 stack: 'Total',
                 data: [120, 132, 101, 134],
@@ -358,7 +358,7 @@ onMounted(() => {
     }
     const option2 = {
         title: {
-            text: '学生心理创伤原因分布图', // 这里是你想要显示的标题文字
+            text: '学生心理创伤原因网络图', // 这里是你想要显示的标题文字
             textStyle: {
                 fontSize: 20, // 标题字体大小
                 fontWeight: 'bold' // 标题字体加粗
@@ -417,13 +417,13 @@ onMounted(() => {
     <div class="box-container">
         <div class="box green">
             <div class="text">
-                暂无心理创伤危机 <br> 20人
+                可能暂无心理创伤危机 <br> 20人
             </div>
             <img src="@/assets/image11.png" alt="Icon 1">
         </div>
         <div class="box blue">
             <div class="text">
-                存在心理创伤危机 <br> 10人
+                可能存在心理创伤危机 <br> 10人
             </div>
             <img src="@/assets/image12.png" alt="Icon 2">
         </div>

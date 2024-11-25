@@ -11,7 +11,7 @@ const toHome = () => {
     <header style="width: 100%;height: 80px;">
         <div style="display: flex;">
             <img src="@/assets/logo.png" alt="" style="width: 80px;margin: 0 10px;">
-            <h1 style="color: #C7655E;line-height: 80px;">四川大学青少年灾后心理创伤危机管理系统</h1>
+            <h1 style="color: #C7655E;line-height: 80px;">青少年灾后心理创伤危机管理系统</h1>
         </div>
     </header>
 

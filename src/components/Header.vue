@@ -17,7 +17,7 @@ const activeIndex = ref('/home')
         <el-header>
             <div class="left">
                 <img src="@/assets/image(1).png" alt="logo" class="logo">
-                <span class="title">四川大学青少年灾后心理创伤危机管理系统</span>
+                <span class="title">青少年灾后心理创伤危机管理系统</span>
             </div>
             <div class="menu-containre">
                 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="#F5F5F5"
