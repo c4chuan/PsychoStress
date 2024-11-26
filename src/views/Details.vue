@@ -24,15 +24,39 @@ const tableData = [
         <el-table :data="tableData" align="center" header-align="center"
             :header-cell-style="{ 'text-align': 'center' }">
             <el-table-column prop="id" label="序号" width="120" align="center"></el-table-column>
-            <el-table-column prop="class" label="班级" width="120" align="center"></el-table-column>
+            <el-table-column prop="class" label="班级" width="120" align="center">
+                  <template v-slot:header="scope">
+        <el-select v-model="selectedClass" placeholder="班级">
+          <el-option label="一年一班" value="一年一班" />
+          <el-option label="一年二班" value="一年二班" />
+          <el-option label="一年三班" value="一年三班" />
+          <el-option label="一年四班" value="一年四班" />
+          <el-option label="一年五班" value="一年五班" />
+        </el-select>
+      </template>
+
+            </el-table-column>
             <el-table-column prop="studentId" label="学号" width="200" align="center"></el-table-column>
             <el-table-column prop="name" label="姓名" width="200" align="center"></el-table-column>
-            <el-table-column prop="status" label="状态" width="200" align="center"></el-table-column>
+            <el-table-column prop="status" label="状态" width="200" align="center">
+                <template v-slot:header="scope">
+        <el-select v-model="selectedStatus" placeholder="状态">
+          <el-option label="正常" value="正常" />
+          <el-option label="存在风险" value="存在风险" />
+        </el-select>
+      </template>
+      <template v-slot="scope">
+        <el-tag :type="scope.row.status === '正常' ? 'success' : 'danger'">
+          {{ scope.row.status }}
+        </el-tag>
+        </template>
+       </el-table-column>
             <el-table-column fixed="right" label="操作" width="150" align="center">
-                <div class="button-group">
-                    <el-button type="primary">修改</el-button>
-                    <el-button type="primary">删除</el-button>
-                </div>
+        <template v-slot="scope">
+        <el-button size="small">Edit</el-button>
+        <el-button size="small" type="danger">Delete</el-button>
+      </template>
+
             </el-table-column>
         </el-table>
         <div class="pagination-box">
