@@ -18,56 +18,107 @@ const isChartVisible = ref(false);
 // 当前显示的饼图索引
 const currentChartIndex = ref(0);
 
+// const option0 = {
+//     title: {
+//     text: '状态分析',
+//     left: 'center',
+//     textStyle: {
+//             color: '#fff', // 设置标题文字为白色
+//         },
+//     },
+//     tooltip: {
+//     trigger: 'item',
+//     textStyle: {
+//             color: '#fff', // 设置标题文字为白色
+//         },
+//     },
+//     legend: {
+//     orient: 'horizontal',
+//     top: 'bottom',
+//     left: 'center',
+//     textStyle: {
+//             color: '#fff', // 设置标题文字为白色
+//         },
+//     },
+//     series: [
+//     {
+//         name: '状态分析',
+//         type: 'pie',
+//         radius: '50%',
+//         center: ['50%', '50%'],
+//         data: [
+//         { value: 60, name: '正常' },
+//         { value: 40, name: '存在风险' },
+//         ],
+//         label: {
+//         normal: {
+//             show: true,
+//             position: 'outside',
+//             formatter: '{b}: {c} ({d}%)',
+//         },
+//         },
+//         emphasis: {
+//         itemStyle: {
+//             shadowBlur: 10,
+//             shadowOffsetX: 0,
+//             shadowColor: 'rgba(0, 0, 0, 0.5)',
+//         },
+//         },
+//     },
+//     ],
+// };
+
 const option0 = {
-    title: {
-    text: '状态分析',
+  title: {
+    text: '',
     left: 'center',
     textStyle: {
             color: '#fff', // 设置标题文字为白色
         },
-    },
-    tooltip: {
+  },
+  tooltip: {
     trigger: 'item',
     textStyle: {
             color: '#fff', // 设置标题文字为白色
         },
-    },
-    legend: {
-    orient: 'horizontal',
-    top: 'bottom',
-    left: 'center',
-    textStyle: {
+  },
+  legend: {
+   orient: 'horizontal', // 设置图例为水平排列
+   top: 'bottom',        // 设置图例在底部
+   left: 'center',        // 设置图例在中间
+   textStyle: {
             color: '#fff', // 设置标题文字为白色
         },
-    },
-    series: [
+  },
+  series: [
     {
-        name: '状态分析',
-        type: 'pie',
-        radius: '50%',
-        center: ['50%', '50%'],
-        data: [
-        { value: 60, name: '正常' },
-        { value: 40, name: '存在风险' },
-        ],
-        label: {
+      name: 'Access From',
+      type: 'pie',
+      radius: '50%',
+      center: ['50%', '50%'], // 设置饼图的中心位置，使其与图例垂直对齐
+      data: [
+        { value: 65, name: '环境' },
+        { value: 80, name: '生理' },
+        { value: 73, name: '心理' },
+        { value: 62, name: '社会' },
+      ],
+      label: {
         normal: {
-            show: true,
-            position: 'outside',
-            formatter: '{b}: {c} ({d}%)',
-        },
-        },
-        emphasis: {
+          show: true,
+          position: 'outside',
+          formatter: '{b}: {c} ({d}%)'
+        }
+      },
+      emphasis: {
         itemStyle: {
-            shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)',
-        },
-        },
-    },
-    ],
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+  ]
 };
-
 
 const option2 = {
   title: {
