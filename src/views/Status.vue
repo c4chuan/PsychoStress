@@ -195,7 +195,7 @@ radar: {
     },
     rich: {
       bold: {
-        fontSize: 15, // Larger font size for radar labels
+        fontSize: 12, // Larger font size for radar labels
         fontWeight: 'bold' // Bold for radar labels
       }
     }
@@ -286,7 +286,7 @@ legend: {
   orient: 'vertical',
   left: 'left',
   textStyle: {
-    fontSize: 15 // 设置图例字体大小
+    fontSize: 12 // 设置图例字体大小
   }
 },
 series: [
@@ -309,9 +309,9 @@ series: [
       }
     },
     label: {
-      formatter: '{b}\n{d}%', 
+      formatter: '{b}\n{d}%',
       textStyle: {
-        fontSize: 13 // 设置饼图标签字体大小
+        fontSize: 12 // 设置饼图标签字体大小
       }
     }
   }
